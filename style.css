@@ -1,0 +1,644 @@
+/*-----------------------------
+Общие классы
+-----------------------------*/
+body {
+ width: 100%;
+ height: 100%;
+ color:#333;
+ background: #fff; /*f7f7f7 Возможно стоит оставить белым*/
+ font: 300 18px 'Open Sans', Arial, Helvetica, sans-serif; 
+ margin:0;
+}
+
+aside, nav, footer, header, section { display: block; }
+
+ul {
+	list-style:none;
+}
+ 
+a {
+	text-decoration:none;
+}
+ 
+a:hover {
+	text-decoration: none;
+}
+
+.center {
+	width: 972px;
+	margin: 0 auto;
+}
+
+
+
+.header {
+	width:100%;
+	height:600px;
+	min-width: 972px;
+	background: url('img/font.jpg') 60% 4% no-repeat;/*background: url('img/font.jpg') 100% 4% no-repeat;*/
+	margin: 0 auto;
+	background-size: cover;
+	color: black;/*Цвет букв в Шапке*/
+}
+
+.logo_connection {
+	height:122px;
+}
+
+.logo {
+	float: left;
+	height:142px;
+	width:600px;
+	margin-top: 10px;
+}
+
+.mtv {
+	display: inline-block;
+	background: url('img/mobile_tv.png') no-repeat;
+	background-size: contain;
+	height:142px;
+	width:200px;
+}
+
+.wave {
+	display: inline-block;
+	background: url('img/volna_log.png') no-repeat;
+	background-size: contain;
+	height:100px;
+	width:380px;
+	margin-bottom: 20px;
+}
+
+.connection {
+	float: right;
+	text-align: right;
+	font-size: 18px;
+	margin-top: 25px;
+}
+
+.connection strong {
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 36px;
+	display: block;
+	margin: 0 0 5px;
+}
+
+a.button24 {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: .5em 2em;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-color: #FDBE33 #000 #D77206;
+  border-radius: 6px;
+  background: linear-gradient(#F3AE0F, #E38916) #E38916;
+  transition: 0.2s;
+} 
+a.button24:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+a.button24:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+
+.inp_style {
+	float: none;
+	display: block;
+	border: 1px solid silver;
+	height: 32px;
+	border-radius: 4px;
+	padding-left: 10px;
+	color: black;
+	width: 220px;
+	margin: 0 auto;
+	font-size: 17px;
+	font-family: 'CintaRegular';
+	text-align: left;
+	font: 300 18px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+.header_content {
+	margin-top: 90px;
+}
+
+.header_content h1 {
+	font: 400 36px/40px 'Roboto Condensed', Arial, Helvetica, sans-serif;
+}
+
+.list {
+	font-size: 15px;
+	padding:0px;
+}
+
+.list li {
+	padding: 0 0 0 15px;
+	margin: 0 50px 10px 0;
+	background: url('img/point.png') no-repeat 0 6px;
+	background-size: 8px;
+	float: left;
+	font-weight: 400;
+}
+
+.header_consult {
+	margin-top: 200px;
+	text-align: center; 
+}
+
+/*-------------------------
+Контент
+-------------------------*/
+
+.content_title h2 {
+	font-size: 36px;
+	line-height: 43px;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center; 
+}
+
+.content_cont1 {
+	text-align: center;
+	border: 5px solid #2d5ba8;
+	padding-bottom: 7px;
+}
+
+.content_cont1 div {
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: -6px;
+	margin-bottom: -6px;
+	z-index: 1;
+	background: #fff;/*f7f7f7*/
+	width: 950px;
+	padding-top: 11px;
+	height: 80px;
+	text-align: left !important;
+}
+
+.rstr {
+	text-indent: 20px;
+}
+
+/*-------------------------
+Списки услуг
+-------------------------*/
+
+.terms {
+	width: 650px;
+}
+
+.terms .title span {
+	font-weight: 600;
+}
+
+.visual{
+	float: left;
+}
+
+.title {
+	overflow: hidden;
+	padding: 0 0 0 5px;
+}
+
+.with_container {
+	width:250px;
+	height:250px;
+	text-align:center;
+	float:left;
+}
+
+.c1, .c2 {
+	margin-right: 110px;
+}
+
+.forvard_pic {
+	height:200px;
+	width:100%;
+	border-radius: 7px;
+	margin:5px;
+	z-index: 2;
+}
+
+.c1 .forvard_pic {
+	background: url('img/bus.jpg') no-repeat;
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+}
+
+.c2 .forvard_pic {
+	background: url('img/radio.jpg') no-repeat;
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+}
+
+.c2 strong {
+	margin-bottom: 47px;
+}
+
+.c3 .forvard_pic {
+	background: url('img/shop.jpg') no-repeat;
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+}
+
+.with_container:hover .backward_pic, .with_container:hover strong {
+	z-index: 6;
+	color: white;
+	display: block;
+	color: white;
+}
+
+.with_container:hover .c1, .with_container:hover .d1 {
+	z-index: 7;
+	color: white;
+	position: relative;
+}
+
+.with_container:hover .c2, .with_container:hover .d2 {
+	z-index: 7;
+	color: white;
+	position: relative;
+}
+
+.with_container:hover .c3, .with_container:hover .d3 {
+	z-index: 7;
+	color: white;
+	position: relative;
+}
+
+.backward_pic {
+	background: #1a1a1a;
+	border-radius: 7px;
+	z-index: 2;
+	width: 620px;
+	height: 282px;/*242px*/
+	display: none;
+	margin-top: -282px;/*-235px;*/
+	position: absolute;
+}
+
+.c3 .backward_pic {
+	background: #1a1a1a;
+	border-radius: 7px;
+	z-index: 2;
+	width: 620px;
+	height: 282px;/*242px*/
+	display: none;
+	margin-top: -258px;/*-235px;*/
+	margin-left: -360px;
+	position: absolute;
+}
+
+.with_container span{
+	position: relative;
+}
+
+.with_container ul {
+	float: right;
+	width: 340px;
+	text-align: left;
+	list-style: disc inside;
+}
+
+.c3 ul {
+	float: left;
+	padding-left: 25px;
+}
+
+.with_container li {
+	margin-bottom: 20px;
+	text-indent: -14px;
+}
+
+.content_post3 {
+	text-align: center; 
+}
+
+.title p{
+	margin-top: 0px;
+}
+
+.variants {
+	margin-left: 40px;
+	text-align: left;
+}
+
+.content_post4 {
+	margin-top: 20px;
+	background: url('img/Shufutinskiy.jpg') no-repeat;
+	background-size: contain;
+	background-color: #00122e;
+	height:550px;
+	width:100%;
+}
+
+.content_cont5 td{
+	margin: 4px 0 4px 0;
+}
+
+.content_cont5 table {
+	background-color: white;
+	margin-bottom:10px;
+	width: 100%;
+}
+
+.content_post6 {
+	height: 70px;
+	background: linear-gradient(to top, #fdbe33, white);
+}
+
+.content_post6 .rstr{
+	padding: 10px 0px 12px 8px;
+	background-color: #fdbe33;
+	float: left;
+    width: 944px;
+    border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	-khtml-border-radius: 10px 10px 0 0;
+}
+
+.indent {
+	background-color: white;
+	width: 10px;
+	height: 100%;
+	float: left;
+}
+
+.content_post6 .left {
+	border-radius: 0 0 10px 0;
+	-moz-border-radius: 0 0 10px 0; 
+	-khtml-border-radius: 0 0 10px 0;
+}
+
+.content_post6 .rigth {
+	border-radius: 0 0 0 10px;
+	-moz-border-radius: 0 0 0 10px; 
+	-khtml-border-radius: 0 0 0 10px;
+}
+
+/*----------------Начало Footer-----------------*/
+
+.footer {
+	width: 100%;
+	min-width: 972px;
+	height: 270px;
+	background: #00142e;
+	color: white;
+}
+
+.about_us, .feedback, .info {
+	width:324px;
+	height: 10px;
+	float:left;
+}
+
+.about_us a{
+	margin: 0 auto;
+}
+
+.feedback input, a{
+	margin: 5px 0;
+}
+
+.feedback input {
+	width: 280px;
+}
+
+.feedback a {
+	width: 220px;
+}
+/*---_________________________________________--*/
+
+.about_company, .social, .contact{
+	font-size: 23px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.vk {
+	background: url('img/social.png') no-repeat;
+	background-position: -77px -15px;
+	display: inline-block;
+	width:50px;
+	height:50px;
+}
+
+.contact div {
+	margin-right:10px;
+}
+
+.phone, .adress, .mail {
+	display: inline-block;	
+}
+
+.phone:before, .adress:before, .mail:before{
+	background: url('img/icons.png') no-repeat;
+	width: 20px;
+	height: 25px;
+	display: inline-block;
+	content: '';
+}
+
+.phone:before {
+	background-position: -130px -3px;
+}
+
+.adress:before {
+	background-position: -33px -5px;
+}
+
+.mail:before {
+	background-position: -58px -5px;
+	width: 35px;
+}
+
+/*.footer_connection {
+	text-align: center;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.footer_connection strong {
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 36px;
+	display: block;
+	margin: 0px;
+}
+
+.footer_connection span, input {
+	display: block;
+	margin: 5px auto;
+	text-align: center;
+}
+
+.footer_connection a {
+	width: 280px;
+}
+
+.footer_connection input {
+	font: 300 18px 'Open Sans', Arial, Helvetica, sans-serif;
+}*/
+
+.errorMsg1, .errorMsg2, .errorMsg3 {
+	color: black; 
+	font-size: 15px; 
+	display:none; 
+	background-color: rgba(255, 0, 0, 0.34); 
+}
+
+/*--------------------------------------------------------
+Всплывающее окно
+--------------------------------------------------------*/
+/* Базовые стили слоя затемнения и модального окна  */
+.overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+/* фон затемнения */
+    background-color: rgba(0, 0, 0, 0.65);
+    position: fixed; /* фиксированное поцизионирование */
+    cursor: default; /* тип курсара */
+}
+/* активируем слой затемнения */
+.overlay:target {
+    display: block;
+}
+/* стили модального окна */
+.popup {
+    top: -100%;
+    right: 0;
+    left: 50%;
+    font-size: 14px;
+    z-index: 20;
+    margin: 0;
+    width: 85%;
+    min-width: 320px;
+    max-width: 300px;/*600*/
+/* фиксированное позиционирование, окно стабильно при прокрутке */
+    position: fixed;
+    padding: 15px;
+    border: 1px solid #383838;
+    background: #fefefe;
+/* скругление углов */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    font: 300 18px 'Open Sans', Arial, Helvetica, sans-serif;
+/* внешняя тень */
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -ms-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    -moz-transition: -moz-transform 0.6s ease-out;
+    -o-transition: -o-transform 0.6s ease-out;
+    transition: transform 0.6s ease-out;
+    text-align: center;
+}
+/* активируем модальный блок */
+.overlay:target+.popup {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+/* формируем кнопку закрытия */
+.close {
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    padding: 0;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    background-color: rgba(61, 61, 61, 0.8);
+    -webkit-box-shadow: 0px 0px 10px #000;
+    -moz-box-shadow: 0px 0px 10px #000;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    text-decoration: none;
+    font: 13px/20px 'Tahoma', Arial, sans-serif;
+    font-weight: bold;
+    -webkit-transition: all ease .8s;
+    -moz-transition: all ease .8s;
+    -ms-transition: all ease .8s;
+    -o-transition: all ease .8s;
+    transition: all ease .8s;
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+    font-size: 12px;
+}
+.close:hover {
+    background-color: background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);    
+}
+/* изображения внутри окна */
+.popup img {
+    width: 100%;
+    height: auto;
+}
+/* миниатюры слева/справа */
+.pic-left, 
+.pic-right {
+    width: 25%;
+    height: auto;
+}
+.pic-left {
+    float: left;
+    margin: 5px 15px 5px 0;
+}
+.pic-right {
+    float: right;
+    margin: 5px 0 5px 15px;
+}
+/* элементы м-медиа, фреймы */
+.popup embed, 
+.popup iframe {
+    top: 0;
+    right: 0;
+    bottom: 0; 
+    left: 0; 
+    display:block;
+    margin: auto;
+    min-width: 320px;
+    max-width: 600px; 
+    width: 100%;
+}
+.popup h2 { /* заголовок 2 */
+    font-size: 30px;
+	line-height: 43px;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+}
+/* параграфы */
+.popup p {margin: 0; padding: 5px 0}
+
+.big{
+	max-width: 600px;
+}

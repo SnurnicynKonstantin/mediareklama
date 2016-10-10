@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="./modal_win/javascript/jquery.toastmessage.js"></script>
+	<link href="./style.css" rel="stylesheet">
+	<link type="text/css" href="./modal_win/resources/css/jquery.toastmessage.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+	 
+	<meta charset="utf-8" />
+	 
+	<title>Аудио и видеореклама в Омске</title>
+
+	<script type="text/javascript" language="javascript">
+
+		function showSuccessToast() {
+			$().toastmessage('showSuccessToast', "Сообщение отправлено успешно!");
+		}
+
+		function showErrorToast() {
+			$().toastmessage('showErrorToast', "Ошибка при сохранении данных, пожалуйста, введите корректные значения в поля.<br> Спасибо за понимание");
+		}
+
+		function callForm1() {
+			var msg = $('.form_pars1').serialize();
+			if ($( ".form_pars1 .name").val() == '' || $( ".form_pars1 .telephone").val() == '')
+				$('.errorMsg1').css('display','block');
+			else {
+				call(msg, '.errorMsg1');
+				$('.errorMsg1').css('display','none');
+			}
+		}
+
+		function callForm2() {
+			var msg = $('.form_pars2').serialize();
+			if ($( ".form_pars2 .name").val() == '' || $( ".form_pars2 .telephone").val() == '' || $( ".form_pars2 .mail").val() == '')
+				$('.errorMsg2').css('display','block');
+			else {
+				call(msg, '.errorMsg2');
+				$('.errorMsg2').css('display','none');
+			}
+		}
+
+		function callForm3() {
+			var msg = $('.form_pars3').serialize();
+			if ($( ".form_pars3 .name").val() == '' || $( ".form_pars3 .telephone").val() == '' || $( ".form_pars3 .mail").val() == '')
+				$('.errorMsg3').css('display','block');
+			else {
+				call(msg, '.errorMsg3');
+				$('.errorMsg3').css('display','none');
+			}
+		}
+
+		function callForm4() {
+			var msg = $('.form_pars4').serialize();
+			call(msg, '.errorMsg4');
+
+		}
+
+	    function call(msg, errorBox) {
+	        $.ajax({
+	        	type: 'POST',
+	          	url: 'form_processing.php',
+	          	data: msg,
+	          	success: function(data) {
+	            	showSuccessToast();
+	            	document.location.href = "#close";
+	          	},
+	          	error: function(xhr, str){
+	          		showErrorToast();
+	                //alert('Возникла ошибка: ' + xhr.responseCode);
+	                document.location.href = "#close";
+	            }
+	        });
+	 
+	    }
+
+	    var hwSlideSpeed = 700;
+		var hwTimeOut = 3000;
+		var hwNeedLinks = true;
+		 
+		$(document).ready(function(e) {
+		    $('.slide').css(
+		        {"position" : "absolute",
+		         "top":'0', "left": '0'}).hide().eq(0).show();
+		    var slideNum = 0;
+		    var slideTime;
+		    slideCount = $("#slider .slide").size();
+		    var animSlide = function(arrow){
+		        clearTimeout(slideTime);
+		        $('.slide').eq(slideNum).fadeOut(hwSlideSpeed);
+		        if(arrow == "next"){
+		            if(slideNum == (slideCount-1)){slideNum=0;}
+		            else{slideNum++}
+		            }
+		        else if(arrow == "prew")
+		        {
+		            if(slideNum == 0){slideNum=slideCount-1;}
+		            else{slideNum-=1}
+		        }
+		        else{
+		            slideNum = arrow;
+		            }
+		        $('.slide').eq(slideNum).fadeIn(hwSlideSpeed, rotator);
+		        $(".control-slide.active").removeClass("active");
+		        $('.control-slide').eq(slideNum).addClass('active');
+		        }
+		if(hwNeedLinks){
+		var $linkArrow = $('<a id="prewbutton" href="#"></a><a id="nextbutton" href="#"></a>')
+		    .prependTo('#slider');      
+		    $('#nextbutton').click(function(){
+		        animSlide("next");
+		 
+		        })
+		    $('#prewbutton').click(function(){
+		        animSlide("prew");
+		        })
+		}
+		    var $adderSpan = '';
+		    $('.slide').each(function(index) {
+		            $adderSpan += '<span class = "control-slide">' + index + '</span>';
+		        });
+		    $('<div class ="sli-links">' + $adderSpan +'</div>').appendTo('#slider-wrap');
+		    $(".control-slide:first").addClass("active");
+		     
+		    $('.control-slide').click(function(){
+		    var goToNum = parseFloat($(this).text());
+		    animSlide(goToNum);
+		    });
+		    var pause = false;
+		    var rotator = function(){
+		    if(!pause){slideTime = setTimeout(function(){animSlide('next')}, hwTimeOut);}
+		            }
+		    $('#slider-wrap').hover(    
+		        function(){clearTimeout(slideTime); pause = true;},
+		        function(){pause = false; rotator();
+		        });
+		    rotator();
+		});
+	</script>
+ 
+</head>
+	<body>
+		<header class="header">
+			<div class="logo_connection center">
+				<div class="logo">
+					<div class="mtv">
+					</div>
+					<div class="wave">
+					</div>
+				</div>
+				<div class="connection">
+					<span>Есть вопросы? Звоните!</span>
+					<strong>+7 (908) 115-65-36</strong>
+					<a href="#win1" class="button24">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</a>
+				</div>
+			</div>
+			<div class="header_content center">
+				<h1>
+					АУДИО И ВИДЕОРЕКЛАМА В ОМСКЕ.
+					ЗАКАЖИ РЕКЛАМНУЮ КАМПАНИЮ У ПРОФЕССИОНАЛОВ
+				</h1>
+			</div>
+			<div class="plus center">
+				<ul class="list">
+					<li>Удобно</li>
+					<li>Креативно</li>
+					<li>Выгодно</li>
+				</ul>
+			</div>
+			<div class="header_consult center">
+				<a href="#win2" class="button24">БЕСПЛАНТАЯ КОНСУЛЬТАЦИЯ</a>
+			</div>
+		</header>
+
+		<section class="content center">
+			<div class="content_post1">
+				<div class="content_title">
+					<h2>НАШИ РЕШЕНИЯ - ВАШ УСПЕХ</h2>
+				</div>
+				<div class="content_cont1">
+					<div>
+						<div class="rstr">Результативность классических рекламных кампаний значительно поубавилась, и недавний финансовый коллапс повлиял на снижение затрат на них. Огромное число фирм отметили снижение спроса на свои товары и услуги. Но надо признать, что совсем обойтись без рекламы бизнес не сможет. </div>
+						<div class="rstr">Мы собственники носителей. Сотрудничая с нами, вы не переплачиваете за посредничество и получаете наиболее выгодные условия.</div>
+					</div>
+				</div>
+			</div>
+			<div class="content_post2">
+				<div class="content_title">
+					<h2>ПОЧЕМУ МЫ?</h2>
+				</div>
+				<div class="content_cont2">
+					<ul class="terms">
+						<li>
+							<div class="visual">
+								<img src="img/twit.png" width="36" height="36" alt="image description">
+							</div>
+							<div class="title">
+								<span>Эффективно</span>
+								<p>Охват более 300000 человек ежедневно.</p>
+							</div>
+						</li>
+						<li>
+							<div class="visual">
+								<img src="img/twit.png" width="36" height="36" alt="image description">
+							</div>
+							<div class="title">
+								<span>Экономично</span>
+								<p>Аудио и видеореклама от 100 рублей в день.</p>
+							</div>
+						</li>
+						<li>
+							<div class="visual">
+								<img src="img/twit.png" width="36" height="36" alt="image description">
+							</div>
+							<div class="title">
+								<span>Креативно</span>
+								<p>Яркие видео и аудиоролики от 1000 рублей.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content_post22" style="height: 390px;">
+			<div class="content_title">
+					<h2>НАШИ РЕШЕНИЯ</h2>
+				</div>
+					<div class="with_container c1">
+						<div class="forvard_pic d1"></div>
+						<strong class="d1">ВИДЕОРЕКЛАМА В ОБЩЕСТВЕННОМ ТРАНСПОРТЕ</strong>
+						<div class="backward_pic">
+							<ul>
+								<li>200 автобусов</li>
+								<li>Высокая эффективность</li>
+								<li>Отсутствие навязчивости</li>
+								<li>Огромный охват аудитории</li>
+							</ul>
+						</div>
+					</div>
+					<div class="with_container c2">
+						<div class="forvard_pic d2"></div>
+						<strong class="d2">РЕКЛАМА НА РАДИО</strong>
+						<div class="backward_pic">
+							<ul>
+								<li>Оперативность, радио обладает самыми короткими периодами производства и размещения рекламы</li>
+							</ul>
+						</div>
+					</div>
+					<div class="with_container c3">
+						<div class="forvard_pic d3"></div>
+						<strong class="d3">АУДИОРЕКЛАМА В СУПЕРМАРКЕТАХ</strong>
+						<div class="backward_pic">
+							<ul>
+								<li>37 торговых точек</li>
+								<li>Крупнейшие сети "Победа", "Еда", "Наш магазин", "Низкоцен"</li>
+							</ul>
+						</div>
+					</div>
+			</div>
+			<div class="content_post3">
+				<a href="#win3" class="button24">ПОЛУЧИТЬ КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</a>
+			</div>
+			<div class="content_post4">
+			</div>
+
+			<!--<div id="slider-wrap">
+			  <div id="slider">
+			    <a id="prewbutton" href="#">&lt;</a>
+			    <a id="nextbutton" href="#">></a>
+			    <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">
+			      <img src="img/Shufutinskiy.jpg" width="640" height="360">
+			    </div>
+			    <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">
+			      <img src="img/p3.jpg" width="640" height="360">
+			    </div>
+			  </div>
+			</div>-->
+
+			<div class="content_post5">
+				<div class="content_title">
+					<h2>НАШИ КЛИЕНТЫ</h2>
+				</div>
+				<div class="content_cont5">
+					<table>
+						<tr>
+							<td>
+								<img src="img/p1.jpg" width="130">
+							</td>
+							<td>
+								<img src="img/p2.png" width="130">
+							</td>
+							<td>
+								<img src="img/p3.jpg" width="130">
+							</td>
+							<td>
+								<img src="img/p4.png" width="130">
+							</td>
+							<td>
+								<img src="img/p5.jpg" width="130">
+							</td>
+							<td>
+								<img src="img/p6.gif" width="130">
+							</td>
+							<td>
+								<img src="img/p7.jpg" width="130">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="img/p8.png" width="130">
+							</td>
+							<td>
+								<img src="img/p9.png" width="130">
+							</td>
+							<td>
+								<img src="img/p10.png" width="130">
+							</td>
+							<td>
+								<img src="img/p11.png" width="130">
+							</td>
+							<td>
+								<img src="img/p12.png" width="130">
+							</td>
+							<td>
+								<img src="img/p13.png" width="130">
+							</td>
+							<td>
+								<img src="img/p14.png" width="130">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="img/p15.png" width="130">
+							</td>
+							<td>
+								<img src="img/p16.png" width="130">
+							</td>
+							<td>
+								<img src="img/p17.png" width="130">
+							</td>
+							<td>
+								<img src="img/p18.png" width="130">
+							</td>
+							<td>
+								<img src="img/p19.png" width="130">
+							</td>
+							<td>
+								<img src="img/p20.png" width="130">
+							</td>
+							<td>
+								<img src="img/p21.jpg" width="130">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="img/p22.png" width="130">
+							</td>
+							<td>
+								<img src="img/p23.png" width="130">
+							</td>
+							<td>
+								<img src="img/p24.png" width="130">
+							</td>
+							<td>
+								<img src="img/p25.png" width="130">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="content_post6">
+				<div class="indent left"></div>
+				<div class="rstr"><b>Можно долго спорить какой вид рекламного носителя эффективней, каждому свое! Но то, что мы сделаем вас ближе к вашему потенциальному клиенту, это факт!</b></div>
+				<div class="indent rigth"></div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="center">
+
+				<div>
+					<div class="about_company">
+						АУДИО И ВИДЕО РЕКЛАМА У ПРОФЕССИОНАЛОВ В ГОРОДЕ ОМСКЕ
+					</div>
+				</div>
+				<div>
+					<div class = "about_us">
+						<div><strong>Мы в социальных сетях</strong></div>
+						<div><a href="http://vk.com/mvomsk" class="vk"></a></div>
+					</div>
+					<div class = "feedback">
+						<div><strong>Остались вопросы?</strong></div>
+						<div>
+							<span>Мы с радостью ответим на них!</span>
+							<form class="form_pars4">
+								<input type="text" placeholder ="Имя" name="name" class="inp_style">
+								<input type="text" placeholder ="Телефон" name="telephone" class="inp_style">
+								<a class="button24" href="javascript: callForm4();">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
+ 							</form>
+						</div>
+					</div>
+					<div class = "info">
+						<div><strong>Контакты</strong></div>
+						<strong>Адрес:</strong> <br>
+						644042 г.Омск <br>Проспект К.Маркса, д.36<br>
+						<strong>Телефон:</strong>  <br>
+						8-908-115-65-36 <br>
+					</div>
+				</div>
+			
+			</div>
+		</footer>
+
+		<a href="#x" class="overlay" id="win1"></a> <!--Модальное окно: Оставьте контакты, мы вам перезвоним   http://dbmast.ru/modalnye-vsplyvayushhie-okna-s-pomoshhyu-css3-bez-javascript-->
+		<div class="popup">
+			<form method = "post"  action="javascript:void(null);" class="form_pars1">
+				<p><h2>ОСТАВЬТЕ КОНТАКТЫ, МЫ ВАМ ПЕРЕЗВОНИМ</h2></p>
+				<p class="errorMsg1">Заполните все поля для отправки заявки.</p>
+				<p>
+					<input type="text" size="36" placeholder ="Имя" name="name" class="inp_style name"><Br>
+					<input type="text" size="36" placeholder ="Телефон" name="telephone" MAXLEGNTH="20" class="inp_style telephone">
+					<input type="hidden" name="form_signat" value="name_telephone">
+				</p>
+				<p>
+					<!--<input type="submit" >-->
+					<a href="javascript: callForm1();" class="button24">Заказать звонок</a>
+				</p>
+			</form>
+			<a class="close" title="Закрыть" href="#close"></a>
+		</div>
+
+		<a href="#x" class="overlay" id="win2"></a>
+	    <div class="popup">
+	    	<form method = "post" action="javascript:void(null);" class="form_pars2">
+				<p><h2>ПОЙМЕМ ЗАДАЧУ И ПРЕДЛОЖИМ РЕШЕНИЕ</h2></p>
+				<p class="errorMsg2">Заполните все поля для отправки заявки.</p>
+				<p>
+					<input type="text" size="36" placeholder ="Имя" name="name" class="inp_style name"><br>
+					<input type="text" size="36" placeholder ="E-mail" name="mail" class="inp_style mail"><br>
+					<input type="text" size="36" placeholder ="Телефон" name="telephone" class="inp_style telephone" style="margin-top: 25px;">
+					<input type="hidden" name="form_signat" value="name_telephone_mail">
+				</p>
+				<p>
+					<!--<input type="submit" >-->
+					<a href="javascript: callForm2();" class="button24">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</a>
+				</p>
+			</form>
+		    <a class="close" title="Закрыть" href="#close"></a>
+	    </div>
+
+	    <a href="#x" class="overlay" id="win3"></a>
+	    <div class="popup big">
+	    	<form method = "post" action="javascript:void(null);" class="form_pars3"><!--<form action="form_processing.php" method = "post">-->
+				<p><h2>ПОЙМЕМ ЗАДАЧУ И ПРЕДЛОЖИМ РЕШЕНИЕ</h2></p>
+				<p class="errorMsg3">Заполните все поля для отправки заявки.</p>
+				<table class="variants">
+						<tr>
+							<td>
+				<div>
+					<input type="text" size="36" placeholder ="Имя" name="name" class="inp_style name"><Br>
+					<input type="text" size="36" placeholder ="E-mail" name="mail" class="inp_style mail"><Br>
+					<input type="text" size="36" placeholder ="Телефон" name="telephone" class="inp_style telephone" style="margin-top: 25px;">
+					<input type="hidden" name="form_signat" value="name_telephone_mail_atr">
+				</div>
+				</td>
+				<td>
+				<div style="width: 300px; margin-left: 10p">
+					<p style="margin-left: 5px;">Выберите услугу</p>
+					<table >
+						<tr>
+							<td>
+								<input type="checkbox" name="chk_group1" value="value1" />
+							</td>
+							<td>
+								<label>Видеореклама в общественном транспорте</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" name="chk_group2" value="value2" />
+							</td>
+							<td>
+								<label>Реклама на радио</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" name="chk_group3" value="value3" />
+							</td>
+							<td>
+								<label>Аудиореклама в супермаркетах</label>
+							</td>
+						</tr>
+					</table>
+				</div>
+				</td>
+				</tr>
+				</table>
+				<p>
+					<!--<input type="submit" >-->
+					<a href="javascript: callForm3();" class="button24">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</a>
+					<!--<a href="javascript:document.forms[2].submit();" class="button24">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</a>-->
+				</p>
+			</form>
+		    <a class="close" title="Закрыть" href="#close"></a>
+	    </div>
+
+	</body>
+</html>
