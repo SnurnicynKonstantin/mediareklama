@@ -1,2 +1,3 @@
 # mediareklama
-Landond for Omsk's holding
+Landing for Omsk's holding
+[mediareklama](http://mediareklama.890m.com/)
