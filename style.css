@@ -47,17 +47,18 @@ a:hover {
 
 .logo {
 	float: left;
-	height:142px;
-	width:600px;
-	margin-top: 10px;
+	height:50px;
+	width:630px;
+	margin-top: 30px;
 }
 
 .mtv {
 	display: inline-block;
 	background: url('img/mobile_tv.png') no-repeat;
 	background-size: contain;
-	height:142px;
-	width:200px;
+	height:120px;
+	width:150px;
+	margin-right: 20px;
 }
 
 .wave {
@@ -65,8 +66,18 @@ a:hover {
 	background: url('img/volna_log.png') no-repeat;
 	background-size: contain;
 	height:100px;
-	width:380px;
+	width:250px;
 	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+.new-radio {
+	display: inline-block;
+	background: url('img/new_radio_logo.png') no-repeat;
+	background-size: contain;
+	height:80px;
+	width:160px;
+	margin-bottom: 40px;
 }
 
 .connection {
