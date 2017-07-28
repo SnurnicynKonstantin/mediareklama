@@ -35,7 +35,7 @@ a:hover {
 	width:100%;
 	height:600px;
 	min-width: 972px;
-	background: url('img/font.jpg') 60% 4% no-repeat;/*background: url('img/font.jpg') 100% 4% no-repeat;*/
+	background: url('img/font.jpg') no-repeat;/*background: url('img/font.jpg') 100% 4% no-repeat;*/
 	margin: 0 auto;
 	background-size: cover;
 	color: black;/*Цвет букв в Шапке*/
@@ -327,10 +327,10 @@ a.button24:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
 
 .content_post4 {
 	margin-top: 20px;
-	background: url('img/Shufutinskiy.jpg') no-repeat;
+	background: url('img/Nagiev.png') no-repeat;
 	background-size: contain;
-	background-color: #00122e;
-	height:550px;
+	/*background-color: #00122e;*/
+	height:500px;/*height:550px;*/
 	width:100%;
 }
 
