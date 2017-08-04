@@ -12,7 +12,7 @@
 	Телефон: ".htmlspecialchars($Phone)."
 	Почта: ".htmlspecialchars($Mail);
 
-	mail("8101980@mail.ru", "Заявка на интенсив от Струве", $message);
-    mail("ks_on_v@mail.ru", "Заявка на интенсив от Струве", $message);
+	mail("8101980@mail.ru", "Заявка на размещение рекламы", $message);
+    mail("ks_on_v@mail.ru", "Заявка на размещение рекламы", $message);
  
 ?>	
